@@ -48,19 +48,20 @@ header,
 footer {
     color: #286238;
     background-color: rgba(255, 255, 255, 0.8);
-    position: fixed;
     width: 100%;
     z-index: 5;
 }
 footer {
     bottom: 0;
 }
+.recit {
+    position: fixed;
+}
 header{
     top: 0;
 }
 /* Navigations de l'interface (bandeau + pied)
    ========================================================================== */
-/* commun aux différentes navigations - balises nav>ul.nav__list */
 .nav__list {
     list-style: none;
     margin-left: 0;
@@ -89,7 +90,7 @@ header{
     font-weight: bold;
     color: #286238;
     display: inline-block;
-    padding: 1rem 1rem;
+    padding: 2rem 2rem;
     text-decoration: none;
     font-size: 1.4rem;
     border-bottom: 5px solid transparent;
@@ -111,9 +112,6 @@ header{
 .nav--menu .nav__link--active {
     color: #4FDA76;
     text-decoration: underline;
-    /* tests et code du dégradé faits avec https://cssgradient.io/ */
-    /*background: linear-gradient(0deg, rgba(236,244,248,1) 0%, rgba(157,177,194,1) 3%, rgba(67,67,67,1) 30%);*/
-    /*background-color: #434343;*/
 }
 .pagination{
     color: #286238;
@@ -129,6 +127,16 @@ header{
     background-size: 35px;
     background-repeat: no-repeat;
     transform: rotate(-90deg);
+    position: relative;
+    bottom: -8px;
+
+}
+@media (min-width: 600px) {
+.icon--suivant {
+    position: relative;
+    bottom: 15px;
+
+ }
 }
 .icon--suivant:hover {
     transform: scale(1.2) rotate(-90deg);
@@ -140,7 +148,13 @@ header{
     background-repeat: no-repeat;
     transform: rotate(90deg);
     position: relative;
-    top: 25px;
+    top: 13px;
+}
+@media (min-width: 600px) {
+    .icon--precedent {
+        position: relative;
+        top: 27px;
+    }
 }
 .icon--precedent:hover {
     transform: scale(1.2) rotate(90deg);
@@ -159,7 +173,14 @@ header{
 .nav--menu--accueil .nav__list {
     display: flex;
     justify-content: center;
-    margin:-120px;
+    margin-top: -75px;
+}
+@media (min-width: 600px) {
+    .nav--menu--accueil .nav__list {
+        display: flex;
+        justify-content: center;
+        margin: -120px;
+    }
 }
 
 .nav--menu--accueil .nav__link {
@@ -167,15 +188,17 @@ header{
     font-weight: bold;
     color: #286238;
     display: inline-block;
-    padding: 1rem 1rem;
+    padding: 2rem 2rem;
     text-decoration: none;
     font-size: 1.4rem;
     border-bottom: 5px solid transparent;
 }
+
 @media (min-width: 600px) {
     .nav--menu--accueil .nav__link {
         font-size: 1.6rem;
         margin: 0 2rem;
+        padding: 1rem 1rem;
     }
 }
 .nav--menu--accueil .nav__link:hover {
@@ -190,8 +213,10 @@ header{
     color: #4FDA76;
     text-decoration: underline;
 }
+@media (min-width: 600px) {
 .bannière {
     padding-left: 30px;
+ }
 }
 .haut {
     background-color: white;
@@ -203,13 +228,15 @@ header{
     color: black;
     padding: 20px;
 }
-.récits--numériques {
-    display:flex;
-}
+
 .carte-numerique {
     width: 100%;
+    margin-left: 70px;
 }
 @media (min-width: 600px) {
+    .récits--numériques {
+        display:flex;
+    }
     .carte-numerique {
         order: -1;
         position: relative;
@@ -253,6 +280,9 @@ header{
         display: flex;
         justify-content: center;
     }
+}
+.nav__list {
+    text-align: center;
 }
 .nav--recits .nav__list {
     display: flex;
@@ -309,6 +339,7 @@ header{
 }
 
 .nav--recits .nav__link {
+    text-align: right;
     color: #286238;
     text-decoration: none;
     display: block;
@@ -316,9 +347,9 @@ header{
     margin-bottom: 1.5rem;
     font-size: 2.1rem;
     min-width: 30rem;
-    text-align: right;
     line-height: 3rem;
 }
+
 
 .nav--recits .nav__link:hover {
     text-decoration: underline;
@@ -342,6 +373,9 @@ header{
     background-color: #EFEFEF;
     color: black;
     font-family: "Source Serif Pro", serif;
+}
+.description {
+    margin: 20px;
 }
 @media (min-width: 600px) {
     .description {
