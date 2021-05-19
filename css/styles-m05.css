@@ -1,10 +1,16 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @charset "UTF-8";
 
 /**
- * @author Prenom Nom <courriel>
+ * @author Amélie Larouche
  *
  * TABLE DES MATIERES
- * Charte typographique
  * Styles de base
  * Grille de mise en page
  * Navigations de l'interface (bandeau + pied)
@@ -16,34 +22,36 @@
  *** Niveau 2 - Gabarit page Photo
  *** Niveau 2 - Gabarit page Texte
  */
-@import url("../css/normalize.css");
-@import url("../css/utilitaires.css");
-@import url("../css/grille.css");
 
-/* Charte typographique
-   ========================================================================== */
-@import url("../css/typo.css");
 /* Styles de base
    ========================================================================== */
-body{
+body {
     color: aliceblue;
     background-color: #E1DDCD;
 }
-blockquote{
-    margin:0;
+
+blockquote {
+    margin: 0;
 }
 
 /* Grille de mise en page
    ========================================================================== */
-body{
+body {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow:column wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
     min-height: 100vh;
 }
-main.conteneur{
+
+main.conteneur {
     min-height: 80vh;
     min-width: 375px;
 }
+
 header,
 footer {
     color: #286238;
@@ -51,15 +59,19 @@ footer {
     width: 100%;
     z-index: 5;
 }
+
 footer {
     bottom: 0;
 }
+
 .recit {
     position: fixed;
 }
-header{
+
+header {
     top: 0;
 }
+
 /* Navigations de l'interface (bandeau + pied)
    ========================================================================== */
 .nav__list {
@@ -74,15 +86,24 @@ header{
     background-size: 50px;
     background-repeat: no-repeat;
 }
+
 .icon--rose:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
     transform: scale(1.2);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
 }
 
 .nav--menu .nav__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
-    margin:0;
+    margin: 0;
 }
 
 .nav--menu .nav__link {
@@ -95,74 +116,102 @@ header{
     font-size: 1.4rem;
     border-bottom: 5px solid transparent;
 }
+
 @media (min-width: 600px) {
     .nav--menu .nav__link {
         font-size: 1.6rem;
         margin: 0 2rem;
     }
 }
+
 .nav--menu .nav__link:hover {
     color: #4FDA76;
 }
+
 .nav--menu .switch:hover {
+    -webkit-transform: scale(2.25);
+    -ms-transform: scale(2.25);
     transform: scale(2.25);
     text-decoration: none;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
 }
+
 .nav--menu .nav__link--active {
     color: #4FDA76;
     text-decoration: underline;
 }
-.pagination{
+
+.pagination {
     color: #286238;
     font-size: large;
     font-weight: bold;
     display: inline-block;
-    margin:1rem;
+    margin: 1rem;
     position: relative;
     top: 12px;
 }
+
 .icon--suivant {
     background-image: url("../recit-5/images/iconfinder_arrow.svg");
     background-size: 35px;
     background-repeat: no-repeat;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
     position: relative;
     bottom: -8px;
 
 }
-@media (min-width: 600px) {
-.icon--suivant {
-    position: relative;
-    bottom: 15px;
 
- }
+@media (min-width: 600px) {
+    .icon--suivant {
+        position: relative;
+        bottom: 15px;
+
+    }
 }
+
 .icon--suivant:hover {
+    -webkit-transform: scale(1.2) rotate(-90deg);
+    -ms-transform: scale(1.2) rotate(-90deg);
     transform: scale(1.2) rotate(-90deg);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
 }
+
 .icon--precedent {
     background-image: url("../recit-5/images/iconfinder_arrow.svg");
     background-size: 35px;
     background-repeat: no-repeat;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
     transform: rotate(90deg);
     position: relative;
     top: 13px;
 }
+
 @media (min-width: 600px) {
     .icon--precedent {
         position: relative;
         top: 27px;
     }
 }
+
 .icon--precedent:hover {
+    -webkit-transform: scale(1.2) rotate(90deg);
+    -ms-transform: scale(1.2) rotate(90deg);
     transform: scale(1.2) rotate(90deg);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
 }
+
 /* Niveau 1 - Accueil
-   ================== */
-.m05{
+   ====================================================================== */
+.m05 {
     background-color: lightgray;
 }
 
@@ -170,15 +219,19 @@ header{
     height: 100px;
     background-color: #94AB9A;
 }
+
 .nav--menu--accueil .nav__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin-top: -75px;
 }
+
 @media (min-width: 600px) {
     .nav--menu--accueil .nav__list {
-        display: flex;
-        justify-content: center;
         margin: -120px;
     }
 }
@@ -201,28 +254,38 @@ header{
         padding: 1rem 1rem;
     }
 }
+
 .nav--menu--accueil .nav__link:hover {
     color: #4FDA76;
 }
+
 .nav--menu--accueil .switch:hover {
+    -webkit-transform: scale(2.25);
+    -ms-transform: scale(2.25);
     transform: scale(2.25);
     text-decoration: none;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
 }
+
 .nav--menu--accueil .nav__link--active {
     color: #4FDA76;
     text-decoration: underline;
 }
+
 @media (min-width: 600px) {
-.bannière {
-    padding-left: 30px;
- }
+    .bannière {
+        padding-left: 30px;
+    }
 }
+
 .haut {
     background-color: white;
     color: black;
     padding: 20px;
 }
+
 .bas {
     background-color: #94AB9A;
     color: black;
@@ -233,11 +296,17 @@ header{
     width: 100%;
     margin-left: 70px;
 }
+
 @media (min-width: 600px) {
     .récits--numériques {
-        display:flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
     }
+
     .carte-numerique {
+        -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
         order: -1;
         position: relative;
         left: 65%;
@@ -255,6 +324,7 @@ header{
         text-align: end;
     }
 }
+
 .commande {
     font-weight: bolder;
     font-style: italic;
@@ -262,35 +332,52 @@ header{
 
 
 /* Niveau 1 - Rose des vents
-   ================== */
+   ================================================================== */
 .rose-des-vents {
     background-image: url("../recit-5/images/carte.jpg");
     background-size: cover;
 }
-.rose-des-vents .conteneur{
-    padding-top:70px;
+
+.rose-des-vents .conteneur {
+    padding-top: 70px;
 }
+
 /* navigation vers les récits */
 .nav--recits {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: bold;
 }
+
 @media (min-width: 600px) {
     .nav--recits {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
 }
+
 .nav__list {
     text-align: center;
 }
+
 .nav--recits .nav__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column nowrap;
     flex-flow: column nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding-left: 13%;
     min-height: 60vh;
 }
+
 @media (min-width: 600px) {
     .nav--recits .nav__list {
         min-height: auto;
@@ -298,26 +385,47 @@ header{
         margin-right: 2%;
     }
 }
+
 @media (min-width: 600px) {
     .nav--recits .nav__listItem:nth-child(1) .nav__link {
+        -webkit-transform: translate(-350px, 40px);
+        -ms-transform: translate(-350px, 40px);
         transform: translate(-350px, 40px);
     }
+
     .nav--recits .nav__listItem:nth-child(2) .nav__link {
+        -webkit-transform: translate(150px, 0px);
+        -ms-transform: translate(150px, 0px);
         transform: translate(150px, 0px);
     }
+
     .nav--recits .nav__listItem:nth-child(3) .nav__link {
+        -webkit-transform: translate(250px, 150px);
+        -ms-transform: translate(250px, 150px);
         transform: translate(250px, 150px);
     }
+
     .nav--recits .nav__listItem:nth-child(4) .nav__link {
+        -webkit-transform: translate(150px, 300px);
+        -ms-transform: translate(150px, 300px);
         transform: translate(150px, 300px);
     }
+
     .nav--recits .nav__listItem:nth-child(5) .nav__link {
+        -webkit-transform: translate(-320px, 290px);
+        -ms-transform: translate(-320px, 290px);
         transform: translate(-320px, 290px);
     }
+
     .nav--recits .nav__listItem:nth-child(6) .nav__link {
+        -webkit-transform: translate(-450px, 100px);
+        -ms-transform: translate(-450px, 100px);
         transform: translate(-450px, 100px);
     }
+
     .nav--recits .nav__listItem:nth-child(7) .nav__link {
+        -webkit-transform: translate(-450px, -100px);
+        -ms-transform: translate(-450px, -100px);
         transform: translate(-450px, -100px);
     }
 }
@@ -330,7 +438,6 @@ header{
 
 @media (min-width: 600px) {
     .nav--recits picture {
-        position: absolute;
         opacity: 0.85;
         top: 50px;
         width: 400px;
@@ -359,39 +466,55 @@ header{
     background-position: right;
     background-size: 3.5rem;
     background-repeat: no-repeat;
+    -webkit-transition: font-size 0.3s;
+    -o-transition: font-size 0.3s;
     transition: font-size 0.3s;
 }
+
 .droits {
     text-align: center;
     max-height: 10px;
 }
 
 /* Niveau 1 - Crédits
-   ================== */
+   ================================================================ */
 
 .apropos {
     background-color: #EFEFEF;
     color: black;
     font-family: "Source Serif Pro", serif;
 }
+
 .description {
     margin: 20px;
 }
+
 @media (min-width: 600px) {
     .description {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
         margin: 50px;
     }
+
     .description .propos {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 45%;
         flex: 1 0 45%;
         margin: 1rem;
     }
+
     .description .credits {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 55%;
         flex: 1 0 55%;
         margin: 1rem;
     }
 }
+
 .credits--item {
     list-style: none;
 }
@@ -399,21 +522,30 @@ header{
 
 /* Niveau 2 - Gabarit page Titre
    ========================================================================== */
-.titre .rangee{
+.titre .rangee {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
-.titre h1{
-    font-size:5vh;
+
+.titre h1 {
+    font-size: 5vh;
     padding-top: 5rem;
 }
+
 @media (min-width: 600px) {
-    .titre h1{
-        font-size:10vh;
+    .titre h1 {
+        font-size: 10vh;
         padding: 0;
     }
 }
+
 .video__tag {
     position: absolute;
     top: 0;
@@ -422,34 +554,42 @@ header{
     height: 100%;
     z-index: -1;
 }
+
 /* Niveau 2 - Gabarit page Photo
    ========================================================================== */
-.photo img{
+.photo img {
     /*max-width: 90%;*/
     margin-top: 50px;
 }
-figure{
+
+figure {
     position: relative;
-    margin:0;
+    margin: 0;
 }
-.photo figure{
-    margin-bottom:7rem;
+
+.photo figure {
+    margin-bottom: 7rem;
 }
+
 .photo figcaption {
     font-family: "Source Serif Pro";
     color: black;
     background-color: white;
     padding: 2rem;
 }
+
 @media (min-width: 600px) {
     .photo figcaption {
         position: absolute;
-        width:100%;
-        bottom:0;
-        opacity:0;
+        width: 100%;
+        bottom: 0;
+        opacity: 0;
     }
+
     .photo figcaption:hover {
-        opacity:0.85;
+        opacity: 0.85;
+        -webkit-transition: opacity 0.5s;
+        -o-transition: opacity 0.5s;
         transition: opacity 0.5s;
         cursor: help;
     }
@@ -457,45 +597,59 @@ figure{
 
 /* Niveau 2 - Gabarit page Texte
    ========================================================================== */
-.texte{
+.texte {
     background-image: url("../recit-5/images/v-txt-m05_2000.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
-.texte .rangee{
+
+.texte .rangee {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-    color:#000;
+    color: #000;
 }
-.texte__contenu{
+
+.texte__contenu {
     padding: 70px 2rem;
     margin-top: 40px;
     font-family: "Source Serif Pro", serif;
-    font-size:1.8rem;
+    font-size: 1.8rem;
 }
+
 @media (min-width: 600px) {
-    .texte__contenu{
-        font-size:2.5rem;
+    .texte__contenu {
+        font-size: 2.5rem;
     }
 }
-.texte__infos{
-    color: aliceblue;
-    background-color: #434343;
-    font-size: 1.6rem;
+
+.texte__infos {
+    color: black;
+    font-size: 1.4rem;
     font-style: italic;
     padding: 1rem;
 }
+
 @media (min-width: 600px) {
-    .texte__infos{
+    .texte__infos {
+        font-size: 1.6rem;
         color: transparent;
-        background-color:transparent;
+        background-color: transparent;
         cursor: help;
     }
-    .texte__infos:hover{
+
+    .texte__infos:hover {
         color: black;
-        transition:color 0.5s;
+        -webkit-transition: color 0.5s;
+        -o-transition: color 0.5s;
+        transition: color 0.5s;
     }
 }
+
 footer {
     max-height: 70px;
 }
+
